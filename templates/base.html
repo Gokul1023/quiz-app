@@ -79,8 +79,8 @@
 <div class="navbar">
   <div>Quiz App</div>
   <div>
-    Welcome, {{ session['username'] }}
-    <a href="/logout">Logout</a>
+    Welcome {{ session['username'] }}
+    <a href="/logout" >Logout</a>
   </div>
 </div>
 {% endif %}

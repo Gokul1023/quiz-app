@@ -1,12 +1,11 @@
 {% extends "base.html" %}
-
 {% block content %}
 
-<div class="card card-custom p-5 bg-white text-center">
+<div class="card center">
   <h2>Your Score</h2>
-  <h1 class="text-success">{{ score }}/10</h1>
+  <h1>{{ score }}</h1>
 
-  <a href="/" class="btn btn-primary mt-3">Try Again</a>
+  <a href="/"><button>Try Again</button></a>
 </div>
 
 {% endblock %}

@@ -1,22 +1,20 @@
 {% extends "base.html" %}
-
 {% block content %}
 
-<div class="row justify-content-center">
-  <div class="col-md-4">
-    <div class="card card-custom p-4 bg-white">
-      <h3 class="text-center mb-4">Register</h3>
+<div class="card">
+  <h2 class="center">Create Account</h2>
 
-      <form method="POST">
-        <input type="text" name="username" class="form-control mb-3" placeholder="Username" required>
-        <input type="password" name="password" class="form-control mb-3" placeholder="Password" required>
-        <button class="btn btn-success w-100">Register</button>
-      </form>
+  <form method="POST">
+    <input type="text" name="username" placeholder="Username" required>
+    <input type="password" name="password" placeholder="Password" required>
 
-      <div class="text-center mt-3">
-        <a href="/login">Already have account?</a>
-      </div>
+    <div class="center">
+      <button type="submit">Register</button>
     </div>
+  </form>
+
+  <div class="center">
+    <p><a href="/login">Already have an account? Login</a></p>
   </div>
 </div>
 

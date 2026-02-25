@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card card-custom p-4 bg-white">
+  <h3 class="mb-4">Online Quiz</h3>
+
+  <form method="POST" action="/submit">
+    {% for q in questions %}
+      <div class="mb-4">
+        <p><b>{{ q[1] }}</b></p>
+
+        {% for option in q[2:6] %}
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="{{q[0]}}" value="{{option}}" required>
+          <label class="form-check-label">{{ option }}</label>
+        </div>
+        {% endfor %}
+      </div>
+    {% endfor %}
+
+    <button class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+{% endblock %}

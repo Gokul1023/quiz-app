@@ -12,7 +12,7 @@ conn = pymysql.connect(
     database="quiz_app"
 )
 
-# ---------------- REGISTER ----------------
+# REGISTER
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "GET":
@@ -39,7 +39,7 @@ def register():
     return redirect("/login")
 
 
-# ---------------- LOGIN ----------------
+# LOGIN
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "GET":
@@ -63,7 +63,7 @@ def login():
     return "Invalid Login"
 
 
-# ---------------- QUIZ ----------------
+# QUIZ
 @app.route("/")
 def quiz():
     if 'user_id' not in session:
@@ -78,7 +78,7 @@ def quiz():
     return render_template("quiz.html", questions=questions)
 
 
-# ---------------- SUBMIT ----------------
+# SUBMIT
 @app.route("/submit", methods=["POST"])
 def submit():
     if 'user_id' not in session:
@@ -110,13 +110,13 @@ def submit():
     return render_template("result.html", score=score)
 
 
-# ---------------- LOGOUT (we'll polish later) ----------------
+# LOGOUT
 @app.route("/logout")
 def logout():
     session.clear()
     return redirect("/login")
 
 
-# ---------------- RUN ----------------
+# RUN
 if __name__ == "__main__":
     app.run(debug=True)
